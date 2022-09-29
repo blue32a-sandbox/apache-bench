@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  apachebench:
+    image: jordi/ab
+    entrypoint: /bin/sh
+    volumes:
+      - ./reports:/home/reports
+
+  web:
+    image: httpd:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/usr/local/apache2/htdocs
