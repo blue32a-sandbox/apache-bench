@@ -7,17 +7,17 @@
 ### コンテナ起動
 
 ```
-docker compose up apachebench
+docker compose run apachebench
 ```
 
 ### ベンチマーク実行
 
 ```
-ad -n <リクエスト数> -c <同時リクエスト数> [http[s]://]hostname[:port]/path
+ab -n <リクエスト数> -c <同時リクエスト数> [http[s]://]hostname[:port]/path
 ```
 
 ```
-ad -n 100 -c 3 https://example.com/hoge > /home/reports/ad.log
+ab -n 100 -c 3 https://example.com/hoge > /home/reports/ab.log
 ```
 
 ## Webサーバー
@@ -26,6 +26,6 @@ ad -n 100 -c 3 https://example.com/hoge > /home/reports/ad.log
 docker compose up web
 ```
 
-URL: http://localhost:8080
+URL: http://localhost:8080/
 
-コンテナ内から： http://web
+コンテナ内から： http://web/
